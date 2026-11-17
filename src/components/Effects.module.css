@@ -1,0 +1,108 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.grid,
+.spot {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line-color) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+}
+
+.grid {
+  --line-color: var(--grid);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 65%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.spot {
+  --line-color: rgba(255, 196, 110, 0.16);
+  --mx: 50vw;
+  --my: 30vh;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  mask-image: radial-gradient(260px circle at var(--mx) var(--my), #000 0%, rgba(0, 0, 0, 0.35) 45%, transparent 75%);
+}
+
+.spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(520px circle at var(--mx) var(--my), rgba(245, 165, 36, 0.06), transparent 70%);
+}
+
+:global(html[data-spot="on"]) .spot {
+  opacity: 1;
+}
+
+.glow {
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 70vh;
+  background: radial-gradient(50% 60% at 15% 100%, rgba(245, 165, 36, 0.05), transparent 70%);
+}
+
+.cells {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.aurora span {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+
+.aurora span:first-child {
+  top: -35vmax;
+  right: -20vmax;
+  background: radial-gradient(closest-side, rgba(245, 165, 36, 0.09), transparent);
+  animation: drift-a 46s ease-in-out infinite alternate;
+}
+
+.aurora span:last-child {
+  bottom: -40vmax;
+  left: -25vmax;
+  background: radial-gradient(closest-side, rgba(120, 96, 220, 0.07), transparent);
+  animation: drift-b 58s ease-in-out infinite alternate;
+}
+
+@keyframes drift-a {
+  to {
+    transform: translate(-18vmax, 14vmax) scale(1.12);
+  }
+}
+
+@keyframes drift-b {
+  to {
+    transform: translate(16vmax, -12vmax) scale(1.1);
+  }
+}
+
+.backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora span {
+    animation: none;
+  }
+}

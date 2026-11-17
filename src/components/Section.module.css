@@ -1,0 +1,25 @@
+.section {
+  padding-top: var(--space-20);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-10);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-ink);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.note {
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+}

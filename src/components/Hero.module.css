@@ -1,0 +1,136 @@
+.hero {
+  padding-top: var(--space-12);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+
+.role {
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.focus {
+  margin-top: var(--space-1);
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+}
+
+.intro {
+  max-width: 52ch;
+  color: var(--color-ink-2);
+  font-size: var(--text-md);
+  line-height: 1.55;
+}
+
+.now {
+  max-width: 52ch;
+  margin-top: var(--space-4);
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+}
+
+.nowLabel {
+  margin-right: var(--space-2);
+  color: var(--color-accent-ink);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.block {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-ink);
+  color: var(--color-ink-2);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+.block li + li {
+  margin-top: var(--space-1);
+}
+
+.profile:first-of-type {
+  margin-top: var(--space-3);
+}
+
+.profile a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  overflow-wrap: anywhere;
+  transition: text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+.profile a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.profileBase {
+  color: var(--color-ink-3);
+}
+
+.routeHead {
+  margin: var(--space-16) 0 var(--space-6);
+}
+
+.lead {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.stats {
+  margin-top: var(--space-2);
+  color: var(--color-ink-3);
+  font-size: var(--text-xs);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 60rem) {
+  .hero {
+    padding-top: var(--space-16);
+  }
+
+  .top {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-6);
+    row-gap: var(--space-10);
+  }
+
+  .titles {
+    grid-column: 1 / span 9;
+  }
+
+  .text {
+    grid-column: 1 / span 7;
+  }
+
+  .block {
+    grid-column: 9 / -1;
+    grid-row: 2;
+    align-self: start;
+  }
+}

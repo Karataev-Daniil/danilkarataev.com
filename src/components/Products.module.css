@@ -1,0 +1,156 @@
+.list {
+  display: grid;
+  gap: var(--space-20);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.shot {
+  min-width: 0;
+}
+
+.img {
+  width: 100%;
+  border: 1px solid var(--color-rule);
+}
+
+.shot figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-ink-3);
+  font-size: var(--text-xs);
+}
+
+.body {
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.name a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+.name a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.kind {
+  margin-top: var(--space-1);
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+}
+
+.summary {
+  margin-top: var(--space-4);
+  color: var(--color-ink-2);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-rule);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--space-1);
+}
+
+.metric dd {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.metric dt {
+  color: var(--color-ink-3);
+  font-size: var(--text-xs);
+  line-height: 1.45;
+}
+
+.points {
+  margin-top: var(--space-6);
+}
+
+.points li {
+  position: relative;
+  padding-left: var(--space-5);
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+}
+
+.points li + li {
+  margin-top: var(--space-1);
+}
+
+.points li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-ink-3);
+}
+
+.chips {
+  margin-top: var(--space-5);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.private {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-ink-3);
+  font-size: var(--text-xs);
+}
+
+@media (min-width: 60rem) {
+  .item {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-8);
+    align-items: start;
+  }
+
+  .shot {
+    grid-column: 1 / span 7;
+    grid-row: 1;
+  }
+
+  .body {
+    grid-column: 8 / -1;
+    grid-row: 1;
+  }
+
+  .flip .shot {
+    grid-column: 6 / -1;
+  }
+
+  .flip .body {
+    grid-column: 1 / span 5;
+  }
+}

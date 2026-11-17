@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#182230"/>
+  <defs>
+    <clipPath id="cap"><rect x="0" y="17" width="64" height="24.6"/></clipPath>
+  </defs>
+  <g fill="#f8f4ec" transform="translate(-1.4 -2)">
+    <path fill-rule="evenodd" d="M13 17h10.4a12.3 12.3 0 0 1 0 24.6H13Zm7.4 6.9h2.6a5.4 5.4 0 0 1 0 10.8h-2.6Z"/>
+    <rect x="38.2" y="17" width="7.4" height="24.6"/>
+    <g clip-path="url(#cap)" stroke="#f8f4ec" stroke-width="7.6" fill="none">
+      <path d="M43.6 30 53.6 15.6"/>
+      <path d="M43.2 28.4 54 43.4"/>
+    </g>
+  </g>
+  <rect x="10" y="47" width="44" height="4.5" fill="#ee6b47"/>
+  <circle cx="41" cy="49.25" r="4.6" fill="#182230" stroke="#ee6b47" stroke-width="3"/>
+</svg>
